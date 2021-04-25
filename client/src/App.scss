@@ -1,0 +1,108 @@
+.section-center{
+  // text-align: center;
+  // border:1px solid lightgray;
+  // display: flex;
+  width: 60%;
+  margin:auto;
+
+  box-shadow: lightgray;
+  box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  background-color: white;
+  margin-top: 10rem;
+  padding : 2rem 4rem;
+}
+
+.grocery-container{
+  // display: flex;
+
+  margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clear-btn{
+background: none;
+cursor: pointer;
+color:maroon;
+margin-top: 2rem;
+
+}
+
+.list{
+padding:1rem;
+width:100%;
+
+
+}
+
+.bud{
+  margin-bottom: 2rem;
+}
+
+.item{
+  display: flex;
+  // margin:auto;
+  // border:1px solid blue;
+}
+
+.title{
+  flex:1;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: darkgrey;
+}
+
+.form-control{
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+.edit-btn{
+  color:green;
+}
+
+.delete-btn{
+  color:red;
+}
+
+.alert{
+
+width :60%;
+margin:1rem auto;
+font-size: 1.6rem;
+line-height: 2rem;
+color:white;
+text-align: center;
+
+}
+
+.alert-danger{
+  background-color: mediumvioletred;
+}
+
+.alert-success{
+  background-color: lightskyblue;
+}
+
+.submit-btn{
+  background-color: lightskyblue;
+  margin-left:2rem;
+  
+}
+.grocery{
+  flex:1;
+  background-color:rgb(245, 248, 253);
+  border:none;
+  padding:0.5rem;
+}
+
+.bud{
+  text-align: center;
+}
+
+.item{
+  margin:0.8rem, 0;
+}
