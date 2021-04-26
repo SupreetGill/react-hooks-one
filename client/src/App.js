@@ -1,11 +1,24 @@
-import React ,{useState}from 'react';
+import React ,{useEffect, useState}from 'react';
 import List from './components/List/List';
 import Alert from './components/Alert/Alert';
 import './App.scss';
 
+
+const getLocalStorage = () => {
+  let initialList = localStorage.getItem('list');
+  if(initialList){
+   return JSON.parse(localStorage.getItem('list'))
+  }
+  else{
+    return []
+  }
+
+}
+
+
 function App() {
   const [name, setName] = useState('');
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalStorage());
   const [isEditing,setIsEditing] = useState(false);
   const [editId,setEditId] = useState(null);
   const [alert,setAlert] = useState({ 
@@ -26,8 +39,7 @@ function App() {
 
    }
    else if(name && isEditing){
-      setList(list.map(item=>{
-        if(item.id ===editId){
+      setList(list.map(item=>{ if(item.id ===editId){
           return {...item, title :name}
         }
         return item
@@ -67,6 +79,11 @@ const editItem = (id)=>{
   setName(edited.title)
 }
 
+ useEffect(()=>{
+   //overwrite old values with new values
+     localStorage.setItem('list', JSON.stringify(list))
+ },[list])
+
 
 
   return (
@@ -77,7 +94,7 @@ const editItem = (id)=>{
           {...alert} 
           removeAlert = {showAlert}
           list = {list} />}
-        <h2 className = 'bud' >grocery bud</h2>
+        <h2 className = 'bud' >Grocery bud</h2>
 
         <div className="form-control">
           <input type="text"
